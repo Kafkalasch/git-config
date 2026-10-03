@@ -1,0 +1,12 @@
+# Copy to ~/.gitconfig.local and replace these placeholders.
+[user]
+	name = Your Name
+	email = you@example.com
+
+# Override preferences for this machine here, for example:
+# [core]
+# 	editor = code --wait
+
+# Optional: use a separate identity for repositories under ~/work/.
+# [includeIf "gitdir:~/work/"]
+# 	path = ~/.gitconfig.work

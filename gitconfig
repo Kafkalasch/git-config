@@ -1,0 +1,53 @@
+# Shared Git preferences. See README.md for setup and local overrides.
+
+[core]
+    editor = nano
+    symlinks = true
+	# Keep machine-specific global ignore patterns in your home directory.
+	excludesfile = ~/.gitignore
+[alias]
+	cleanup = "!f() { current=$(git symbolic-ref --quiet --short HEAD || :); git branch --format=\"%(refname:short)\" --merged | while IFS= read -r branch; do [ \"$branch\" = \"$current\" ] && continue; case \"$branch\" in main|master|develop) continue ;; esac; git branch -d -- \"$branch\" || return; done; }; f"
+	fpush = "push --force-with-lease"
+	logg = "log --graph --decorate"
+[pager]
+  branch = false
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[pull]
+    rebase = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[merge]
+	conflictstyle = zdiff3
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+
+# Identity and machine-specific overrides stay outside this public repository.
+[include]
+	path = ~/.gitconfig.local

@@ -1,0 +1,4 @@
+# Local identity, credentials, and machine-specific overrides.
+.gitconfig.local
+gitconfig.local
+.DS_Store
