@@ -1,6 +1,6 @@
 # Git configuration
 
-My shared Git preferences for setting up a new machine. Identity and machine-specific overrides stay outside this public repository.
+My shared Git preferences for setting up a new machine. Identity and machine-specific overrides live in the ignored `gitconfig.local` file alongside the shared config.
 
 ## Setup
 
@@ -17,11 +17,11 @@ The installer adds an include to your existing global config, preserving its con
 On a new machine, set your identity in the private override file:
 
 ```sh
-git config --file ~/.gitconfig.local user.name "Your Name"
-git config --file ~/.gitconfig.local user.email "you@example.com"
+git config --file gitconfig.local user.name "Your Name"
+git config --file gitconfig.local user.email "you@example.com"
 ```
 
-You can also use `gitconfig.local.example` as a starting point. Your existing global identity still works if you leave these overrides unset. Overrides in `~/.gitconfig.local` take precedence over the shared settings; repository-specific config takes precedence over global config.
+Run these commands from the checkout. You can also use `gitconfig.local.example` as a starting point. Your existing global identity still works if you leave these overrides unset. Overrides in `gitconfig.local` take precedence over the shared settings; repository-specific config takes precedence over global config. The private file is not committed, so recreate it on each new machine.
 
 For a separate work identity, uncomment the `includeIf` example and set the name/email in `~/.gitconfig.work`:
 

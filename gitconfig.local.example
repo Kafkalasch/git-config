@@ -1,4 +1,4 @@
-# Copy to ~/.gitconfig.local and replace these placeholders.
+# Copy to gitconfig.local in this checkout and replace these placeholders.
 [user]
 	name = Your Name
 	email = you@example.com

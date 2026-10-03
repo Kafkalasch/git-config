@@ -48,6 +48,6 @@
 	autoStash = true
 	updateRefs = true
 
-# Identity and machine-specific overrides stay outside this public repository.
+# Identity and machine-specific overrides stay in an ignored local file.
 [include]
-	path = ~/.gitconfig.local
+	path = gitconfig.local
